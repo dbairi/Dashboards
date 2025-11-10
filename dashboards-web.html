@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Power BI Reports</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Responsive iframe container */
+    .report-container {
+      position: relative;
+      width: 90%; /* Adjust width as needed */
+      max-width: 1500px;
+      padding-bottom: 50.25%; /* Aspect ratio: 600 / 373.5 ≈ 1.606 */
+      height: 0;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: white;
+      margin-bottom: 40px; /* Space between reports */
+    }
+
+    .report-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>BIC Homes Dashboards</h1>
+
+  <!-- Closings report -->
+  <div class="report-container">
+    <iframe 
+      title="Closings Report"
+      src="https://app.powerbi.com/view?r=eyJrIjoiODgzZDIwN2QtMzYwOC00MGNhLWI2MTYtZjI4NmEwNzNlOWMwIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+      allowFullScreen="true">
+    </iframe>
+  </div>
+
+  <!-- pre-con report -->
+  <div class="report-container">
+    <iframe title="pre-construction" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGVkNTU5ZTYtMzU5Zi00ZTcyLTk2NzEtMzI2Nzc3NGE5NDViIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true"></iframe>
+  </div>
+
+  <!-- pre-planning report -->
+  <div class="report-container">
+   <iframe title="pre-planning" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiN2Q3ODExMzctODdlOC00OWUwLThkYzEtNjkwYTFjY2ZjNjdhIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true"></iframe>
+  </div>
+
+</body>
+</html>
