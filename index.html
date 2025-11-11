@@ -44,8 +44,8 @@
     .report-container {
       position: relative;
       width: 90%;
-      max-width: 1500px;
-      padding-bottom: 50.25%; /* Aspect ratio based on Power BI embed */
+      max-width: 1400px;
+      padding-bottom: 40.25%; /* Aspect ratio based on Power BI embed */
       height: 0;
       overflow: hidden;
       border: 1px solid #ccc;
@@ -63,86 +63,145 @@
       height: 100%;
       border: 0;
     }
+    /* Navigation Bar Container */
+.nav-bar {
+  position: fixed;          /* Stays fixed below the main title */
+  top: 70px;                /* Adjust depending on main header height */
+  width: 100%;              /* Full width */
+  background-color: #e8eefc; /* Light background for visibility */
+  display: flex;            /* Flex layout for links */
+  justify-content: center;  /* Center links horizontally */
+  flex-wrap: wrap;          /* Wrap links on smaller screens */
+  gap: 15px;                /* Space between links */
+  padding: 5px 0;          /* Vertical padding */
+  z-index: 999;             /* Above other content */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+  border-bottom: 1px solid #ccc; /* Optional border */
+}
+
+/* Individual Links */
+.nav-bar a {
+  text-decoration: none;     /* Remove underline */
+  color: #004aad;            /* Blue link color */
+  font-weight: bold;          /* Emphasis */
+  font-size: 19px;            /* Slightly smaller font */
+  padding: 5px 10px;          /* Clickable area */
+  border-radius: 4px;         /* Rounded corners */
+  transition: all 0.3s ease;  /* Smooth hover transition */
+}
+
+/* Hover Effect */
+.nav-bar a:hover {
+  background-color: #004aad; /* Dark blue background */
+  color: #fff;               /* White text */
+}
+
+/* Active Link Highlight (optional) */
+.nav-bar a.active {
+  background-color: #001f5c; /* Darker blue */
+  color: #fff;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust content margin to prevent overlap */
+.content {
+  margin-top: 160px; /* Adjust based on header + nav-bar height */
+}
+
   </style>
 </head>
 <body>
   <h1>BIC Homes Dashboards</h1>
 
+  <!-- ✅ New Navigation Header -->
+  <div class="nav-bar">
+    <a href="#closings">Closings</a>
+    <a href="#precon">Pre-Con</a>
+    <a href="#preplanning">Pre-Planning</a>
+    <a href="#production">Production</a>
+    <a href="#purchasing">Purchasing</a>
+    <a href="#warranty">Warranty</a>
+    <a href="#sales">Sales</a>
+    <a href="#marketing">Marketing</a>
+    <a href="#accounting">Accounting</a>
+  </div>
+
   <div class="content">
     <!-- Closings report -->
-    <div class="report-container">
-      <iframe title="closings" width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiODgzZDIwN2QtMzYwOC00MGNhLWI2MTYtZjI4NmEwNzNlOWMwIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true">
-       </iframe>
+    <div id="closings" class="report-container">
+      <iframe title="closings" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiODgzZDIwN2QtMzYwOC00MGNhLWI2MTYtZjI4NmEwNzNlOWMwIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" 
+      allowFullScreen="true"></iframe>
     </div>
 
     <!-- Pre-con report -->
-    <div class="report-container">
+    <div id="precon" class="report-container">
       <iframe 
         title="pre-construction"
         src="https://app.powerbi.com/view?r=eyJrIjoiOGVkNTU5ZTYtMzU5Zi00ZTcyLTk2NzEtMzI2Nzc3NGE5NDViIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"></iframe>
     </div>
 
     <!-- Pre-planning report -->
-    <div class="report-container">
+    <div id="preplanning" class="report-container">
       <iframe 
         title="pre-planning"
         src="https://app.powerbi.com/view?r=eyJrIjoiN2Q3ODExMzctODdlOC00OWUwLThkYzEtNjkwYTFjY2ZjNjdhIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"></iframe>
     </div>
 
     <!-- Production report -->
-    <div class="report-container">
+    <div id="production" class="report-container">
       <iframe 
         title="production-2025"
         src="https://app.powerbi.com/view?r=eyJrIjoiYmYyNDY2YWEtOTE4ZS00Njc1LTg2NzQtNDFjYzgxZjczNzEyIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"></iframe>
     </div>
-  </div>
 
-   <!-- Purchasing report -->
-    <div class="report-container">
-      <iframe title="Purchasing-dashboard" width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiM2EyM2EyODItYzk3MC00YmI5LTg4ODYtOTUxMzhjMWEyNzhiIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" 
-      frameborder="0" allowFullScreen="true">
-      </iframe>
+    <!-- Purchasing report -->
+    <div id="purchasing" class="report-container">
+      <iframe 
+        title="Purchasing-dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiM2EyM2EyODItYzk3MC00YmI5LTg4ODYtOTUxMzhjMWEyNzhiIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
     </div>
-  </div>
 
-   <!-- Warranty report -->
-    <div class="report-container">
-      <iframe title="warranty" width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiNDAwZDlmNjItYjJjNy00OGJiLThkZTEtOGUxMDNiNGE1NDhkIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true">
-      </iframe>
+    <!-- Warranty report -->
+    <div id="warranty" class="report-container">
+      <iframe 
+        title="warranty"
+        src="https://app.powerbi.com/view?r=eyJrIjoiNDAwZDlmNjItYjJjNy00OGJiLThkZTEtOGUxMDNiNGE1NDhkIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
     </div>
-  </div>
 
-   <!-- Sales report -->
-    <div class="report-container">
-      <iframe title="sales-final-dashboard" width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiYTQ4ZTgyNTUtYWNlNy00ZmI5LThjOWQtYmM1NjY1ZDY0ZmI2IiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true">
-      </iframe>
+    <!-- Sales report -->
+    <div id="sales" class="report-container">
+      <iframe 
+        title="sales-final-dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYTQ4ZTgyNTUtYWNlNy00ZmI5LThjOWQtYmM1NjY1ZDY0ZmI2IiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
     </div>
-  </div>
 
-   <!-- Marketing report -->
-    <div class="report-container">
-      <iframe title="marketing" width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiMWRjNTBiNjMtOTNlOS00OWZmLWI4YjgtZDU3NGFjNWYyNjYxIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true">
-       </iframe>
+    <!-- Marketing report -->
+    <div id="marketing" class="report-container">
+      <iframe 
+        title="marketing"
+        src="https://app.powerbi.com/view?r=eyJrIjoiMWRjNTBiNjMtOTNlOS00OWZmLWI4YjgtZDU3NGFjNWYyNjYxIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
     </div>
-  </div>
 
-   <!-- Accounting report -->
-    <div class="report-container">
-      <iframe title="2025-Accounts_Dashboard" width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiNDg3ZjcyYjYtMjhmMC00ODFhLWIyMjctNWU2YWEyNTZhOWIyIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true">
-      </iframe>
+    <!-- Accounting report -->
+    <div id="accounting" class="report-container">
+      <iframe 
+        title="2025-Accounts_Dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiNDg3ZjcyYjYtMjhmMC00ODFhLWIyMjctNWU2YWEyNTZhOWIyIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
     </div>
   </div>
 </body>
+
 </html>
