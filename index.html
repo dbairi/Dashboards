@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Embedded Power BI Reports</title>
+  <title>BIC Homes Dashboards</title>
   <style>
     body {
       margin: 0;
@@ -17,16 +17,35 @@
     }
 
     h1 {
+      margin-top: 0;
       margin-bottom: 20px;
       text-align: center;
+      background-color: #004aad;
+      color: white;
+      width: 100%;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Add space so reports don’t hide behind the fixed header */
+    .content {
+      margin-top: 100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* Responsive iframe container */
     .report-container {
       position: relative;
-      width: 90%; /* Adjust width as needed */
+      width: 90%;
       max-width: 1500px;
-      padding-bottom: 50.25%; /* Aspect ratio: 600 / 373.5 ≈ 1.606 */
+      padding-bottom: 50.25%; /* Aspect ratio based on Power BI embed */
       height: 0;
       overflow: hidden;
       border: 1px solid #ccc;
@@ -49,28 +68,42 @@
 <body>
   <h1>BIC Homes Dashboards</h1>
 
-  <!-- Closings report -->
-  <div class="report-container">
-    <iframe 
-      title="Closings Report"
-      src="https://app.powerbi.com/view?r=eyJrIjoiODgzZDIwN2QtMzYwOC00MGNhLWI2MTYtZjI4NmEwNzNlOWMwIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
-      allowFullScreen="true">
-    </iframe>
-  </div>
+  <div class="content">
+    <!-- Closings report -->
+    <div class="report-container">
+      <iframe 
+        title="Closings Report"
+        src="https://app.powerbi.com/view?r=eyJrIjoiODgzZDIwN2QtMzYwOC00MGNhLWI2MTYtZjI4NmEwNzNlOWMwIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true">
+      </iframe>
+    </div>
 
-  <!-- pre-con report -->
-  <div class="report-container">
-    <iframe title="pre-construction" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGVkNTU5ZTYtMzU5Zi00ZTcyLTk2NzEtMzI2Nzc3NGE5NDViIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true"></iframe>
-  </div>
+    <!-- Pre-con report -->
+    <div class="report-container">
+      <iframe 
+        title="pre-construction"
+        src="https://app.powerbi.com/view?r=eyJrIjoiOGVkNTU5ZTYtMzU5Zi00ZTcyLTk2NzEtMzI2Nzc3NGE5NDViIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true">
+      </iframe>
+    </div>
 
-  <!-- pre-planning report -->
-  <div class="report-container">
-   <iframe title="pre-planning" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiN2Q3ODExMzctODdlOC00OWUwLThkYzEtNjkwYTFjY2ZjNjdhIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true"></iframe>
-  </div>
+    <!-- Pre-planning report -->
+    <div class="report-container">
+      <iframe 
+        title="pre-planning"
+        src="https://app.powerbi.com/view?r=eyJrIjoiN2Q3ODExMzctODdlOC00OWUwLThkYzEtNjkwYTFjY2ZjNjdhIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true">
+      </iframe>
+    </div>
 
-  <!--Production report-->
-  <div class="report-container">
-     <iframe title="production-2025" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYmYyNDY2YWEtOTE4ZS00Njc1LTg2NzQtNDFjYzgxZjczNzEyIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true"></iframe>
-   </div>
+    <!-- Production report -->
+    <div class="report-container">
+      <iframe 
+        title="production-2025"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYmYyNDY2YWEtOTE4ZS00Njc1LTg2NzQtNDFjYzgxZjczNzEyIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true">
+      </iframe>
+    </div>
+  </div>
 </body>
 </html>
