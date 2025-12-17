@@ -108,11 +108,11 @@
   position: fixed;          /* Stays fixed below the main title */
   top: 65px;                /* Adjust depending on main header height */
   width: 100%;              /* Full width */
-  background-color: #004aad; /* Light background for visibility */
+  background-color: #ffffff; /* Light background for visibility */
   display: flex;            /* Flex layout for links */
   justify-content: center;  /* Center links horizontally */
   flex-wrap: wrap;          /* Wrap links on smaller screens */
-  gap: 15px;                /* Space between links */
+  gap: 150px;                /* Space between links */
   padding: 5px 0;          /* Vertical padding */
   z-index: 999;             /* Above other content */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Subtle shadow */
@@ -122,24 +122,25 @@
 /* Individual Links */
 .nav-bar1 a {
   text-decoration: none;     /* Remove underline */
-  color: #ffffff;            /* Blue link color */
+  color: #000000;            /* Blue link color */
   font-weight: bold;          /* Emphasis */
   font-size: 19px;            /* Slightly smaller font */
-  padding: 5px 10px;          /* Clickable area */
+  padding: 5px 10px;
+  border: solid rgb(28, 192, 42) 1px;
+  background-color: #db5656;          /* Clickable area */
   border-radius: 4px;         /* Rounded corners */
   transition: all 0.3s ease;  /* Smooth hover transition */
 }
 
-/* Hover Effect */
-.nav-bar1 a:hover {
-  background-color: #ad0034; /* Dark blue background */
-  color: #fff;               /* White text */
+.nav-bar1 a:hover.active {
+  background-color: #77e4a4;
+  color: #000000;
 }
 
-/* Active Link Highlight (optional) */
+/* Active (stays until page changes) */
 .nav-bar1 a.active {
-  background-color: #5c0000; /* Darker blue */
-  color: #fff;
+  background-color: #77e4a4;
+  color: #000000;
 }
 
 
