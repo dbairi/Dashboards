@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BIC Homes Dashboards</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <style>
     body {
       margin: 0;
@@ -66,7 +67,7 @@
     /* Navigation Bar Container */
 .nav-bar {
   position: fixed;          /* Stays fixed below the main title */
-  top: 112px;                /* Adjust depending on main header height */
+  top: 125px;                /* Adjust depending on main header height */
   width: 100%;              /* Full width */
   background-color: #e8eefc; /* Light background for visibility */
   display: flex;            /* Flex layout for links */
@@ -79,34 +80,35 @@
   border-bottom: 1px solid #ccc; /* Optional border */
 }
 
-/* Individual Links */
-.nav-bar a {
-  text-decoration: none;     /* Remove underline */
-  color: #004aad;            /* Blue link color */
-  font-weight: bold;          /* Emphasis */
-  font-size: 19px;            /* Slightly smaller font */
-  padding: 5px 10px;          /* Clickable area */
-  border-radius: 4px;         /* Rounded corners */
-  transition: all 0.3s ease;  /* Smooth hover transition */
+
+/* .nav-bar a {
+  text-decoration: none;     
+  color: #004aad;            
+  font-weight: bold;          
+  font-size: 19px;            
+  padding: 5px 10px;          
+  border-radius: 4px;         
+  transition: all 0.3s ease;  
 }
 
-/* Hover Effect */
+
 .nav-bar a:hover {
-  background-color: #004aad; /* Dark blue background */
-  color: #fff;               /* White text */
+  background-color: #004aad; 
+  color: #fff;               
 }
 
-/* Active Link Highlight (optional) */
+
 .nav-bar a.active {
-  background-color: #001f5c; /* Darker blue */
+  background-color: #001f5c; 
   color: #fff;
-}
+} */
+
 
 
 
 .nav-bar1 {
   position: fixed;          /* Stays fixed below the main title */
-  top: 65px;                /* Adjust depending on main header height */
+  top: 75px;                /* Adjust depending on main header height */
   width: 100%;              /* Full width */
   background-color: #ffffff; /* Light background for visibility */
   display: flex;            /* Flex layout for links */
@@ -119,29 +121,7 @@
   border-bottom: 1px solid #ccc; /* Optional border */
 }
 
-/* Individual Links */
-.nav-bar1 a {
-  text-decoration: none;     /* Remove underline */
-  color: #000000;            /* Blue link color */
-  font-weight: bold;          /* Emphasis */
-  font-size: 19px;            /* Slightly smaller font */
-  padding: 5px 10px;
-  border: solid rgb(28, 192, 42) 1px;
-  background-color: #db5656;          /* Clickable area */
-  border-radius: 4px;         /* Rounded corners */
-  transition: all 0.3s ease;  /* Smooth hover transition */
-}
 
-.nav-bar1 a:hover.active {
-  background-color: #77e4a4;
-  color: #000000;
-}
-
-/* Active (stays until page changes) */
-.nav-bar1 a.active {
-  background-color: #77e4a4;
-  color: #000000;
-}
 
 
 /* Smooth scrolling for anchor links */
@@ -160,23 +140,29 @@ html {
   <h1>BIC Homes Dashboards</h1>
 
   <div class="nav-bar1">
-  <a href="2026-dashboards.html">2026-Dashboards</a>
-  <a href="index.html">2025-Dashboards</a>
+  <a href="2026-dashboards.html" class="btn btn-danger">
+    2026-Dashboards
+  </a>
+  <a href="index.html" class="btn btn-danger">
+    2025-Dashboards
+  </a>
 </div>
+
 
 
   <!-- ✅ New Navigation Header -->
   <div class="nav-bar">
-    <a href="#closings">Closings</a>
-    <a href="#precon">Pre-Con</a>
-    <a href="#preplanning">Pre-Planning</a>
-    <a href="#production">Production</a>
-    <a href="#purchasing">Purchasing</a>
-    <a href="#warranty">Warranty</a>
-    <a href="#sales">Sales</a>
-    <a href="#marketing">Marketing</a>
-    <a href="#accounting">Accounting</a>
-  </div>
+  <a href="#closings" class="btn btn-outline-primary">Closings</a>
+  <a href="#precon" class="btn btn-outline-success">Pre-Con</a>
+  <a href="#preplanning" class="btn btn-outline-warning">Pre-Planning</a>
+  <a href="#production" class="btn btn-outline-danger">Production</a>
+  <a href="#purchasing" class="btn btn-outline-info">Purchasing</a>
+  <a href="#warranty" class="btn btn-outline-secondary">Warranty</a>
+  <a href="#sales" class="btn btn-outline-dark">Sales</a>
+  <a href="#marketing" class="btn btn-outline-primary">Marketing</a>
+  <a href="#accounting" class="btn btn-outline-success">Accounting</a>
+</div>
+
 
   <div class="content">
     <!-- Closings report -->
@@ -185,6 +171,7 @@ html {
       src="https://app.powerbi.com/view?r=eyJrIjoiODgzZDIwN2QtMzYwOC00MGNhLWI2MTYtZjI4NmEwNzNlOWMwIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" 
       allowFullScreen="true"></iframe>
     </div>
+    
 
     <!-- Pre-con report -->
     <div id="precon" class="report-container">
@@ -253,3 +240,4 @@ html {
 </body>
 
 </html>
+

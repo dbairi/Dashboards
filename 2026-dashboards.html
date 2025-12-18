@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2025 BIC Homes Dashboards</title>
+  <title>BIC Homes Dashboards</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <style>
     body {
       margin: 0;
@@ -66,7 +67,7 @@
     /* Navigation Bar Container */
 .nav-bar {
   position: fixed;          /* Stays fixed below the main title */
-  top: 112px;                /* Adjust depending on main header height */
+  top: 125px;                /* Adjust depending on main header height */
   width: 100%;              /* Full width */
   background-color: #e8eefc; /* Light background for visibility */
   display: flex;            /* Flex layout for links */
@@ -79,36 +80,36 @@
   border-bottom: 1px solid #ccc; /* Optional border */
 }
 
-/* Individual Links */
-.nav-bar a {
-  text-decoration: none;     /* Remove underline */
-  color: #004aad;            /* Blue link color */
-  font-weight: bold;          /* Emphasis */
-  font-size: 19px;            /* Slightly smaller font */
-  padding: 5px 10px;          /* Clickable area */
-  border-radius: 4px;         /* Rounded corners */
-  transition: all 0.3s ease;  /* Smooth hover transition */
+
+/* .nav-bar a {
+  text-decoration: none;     
+  color: #004aad;            
+  font-weight: bold;          
+  font-size: 19px;            
+  padding: 5px 10px;          
+  border-radius: 4px;         
+  transition: all 0.3s ease;  
 }
 
-/* Hover Effect */
+
 .nav-bar a:hover {
-  background-color: #004aad; /* Dark blue background */
-  color: #fff;               /* White text */
+  background-color: #004aad; 
+  color: #fff;               
 }
 
-/* Active Link Highlight (optional) */
+
 .nav-bar a.active {
-  background-color: #001f5c; /* Darker blue */
+  background-color: #001f5c; 
   color: #fff;
-}
+} */
 
 
 
 .nav-bar1 {
   position: fixed;          /* Stays fixed below the main title */
-  top: 65px;                /* Adjust depending on main header height */
+  top: 75px;                /* Adjust depending on main header height */
   width: 100%;              /* Full width */
-  background-color:#f5f5f5; /* Light background for visibility */
+  background-color: #ffffff; /* Light background for visibility */
   display: flex;            /* Flex layout for links */
   justify-content: center;  /* Center links horizontally */
   flex-wrap: wrap;          /* Wrap links on smaller screens */
@@ -119,29 +120,7 @@
   border-bottom: 1px solid #ccc; /* Optional border */
 }
 
-/* Individual Links */
-.nav-bar1 a {
-  text-decoration: none;     /* Remove underline */
-  color: #000000;            /* Blue link color */
-  font-weight: bold;          /* Emphasis */
-  font-size: 19px;            /* Slightly smaller font */
-  padding: 5px 10px;
-  border: solid rgb(65, 216, 115) 1px;
-  background-color: #db5656;          /* Clickable area */
-  border-radius: 4px;         /* Rounded corners */
-  transition: all 0.3s ease;  /* Smooth hover transition */
-}
 
-.nav-bar1 a:hover:not(.active) {
-  background-color: #77e4a4;
-  color: #000000;
-}
-
-/* Active (stays until page changes) */
-.nav-bar1 a.active {
-  background-color: #77e4a4;
-  color: #000000;
-}
 
 
 /* Smooth scrolling for anchor links */
@@ -153,6 +132,16 @@ html {
 .content {
   margin-top: 160px; /* Adjust based on header + nav-bar height */
 }
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* click-through */
+  z-index: 9999;
+}
+
 
   </style>
 </head>
@@ -160,32 +149,162 @@ html {
   <h1>BIC Homes Dashboards</h1>
 
   <div class="nav-bar1">
-  <a href="2026-dashboards.html">2026-Dashboards</a>
-  <a href="index.html">2025-Dashboards</a>
+  <a href="2026-dashboards.html" class="btn btn-danger">
+    2026-Dashboards
+  </a>
+  <a href="index.html" class="btn btn-danger">
+    2025-Dashboards
+  </a>
 </div>
+
 
 
   <!-- ✅ New Navigation Header -->
   <div class="nav-bar">
-    <a href="#closings">Closings</a>
-    <a href="#precon">Pre-Con</a>
-    <a href="#preplanning">Pre-Planning</a>
-    <a href="#production">Production</a>
-    <a href="#purchasing">Purchasing</a>
-    <a href="#warranty">Warranty</a>
-    <a href="#sales">Sales</a>
-    <a href="#marketing">Marketing</a>
-    <a href="#accounting">Accounting</a>
-  </div>
+  <a href="#closings" class="btn btn-outline-primary">Closings</a>
+  <a href="#precon" class="btn btn-outline-success">Pre-Con</a>
+  <a href="#preplanning" class="btn btn-outline-warning">Pre-Planning</a>
+  <a href="#production" class="btn btn-outline-danger">Production</a>
+  <a href="#purchasing" class="btn btn-outline-info">Purchasing</a>
+  <a href="#warranty" class="btn btn-outline-secondary">Warranty</a>
+  <a href="#sales" class="btn btn-outline-dark">Sales</a>
+  <a href="#marketing" class="btn btn-outline-primary">Marketing</a>
+  <a href="#accounting" class="btn btn-outline-success">Accounting</a>
+</div>
+
 
   <div class="content">
     <!-- Closings report -->
     <div id="closings" class="report-container">
-      <iframe title="2026-closings" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiY2FmNDU3ODItYWM2Mi00MDhlLTljMDctNTc1ZWM2YTRhNTAyIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" frameborder="0" allowFullScreen="true">
-       </iframe>
+      <iframe title="2026-closings" width="600" height="373.5" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiNzk5MDcxZjAtMzIzOS00NGZmLWE0ZGYtMWMzMGM2MmQ0MmQxIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" 
+      frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+    
+       <!-- Pre-con report -->
+    <div id="precon" class="report-container">
+      <iframe 
+        title="pre-construction"
+        src="https://app.powerbi.com/view?r=eyJrIjoiZTk5MDZjOGUtNzRiZC00OTk5LTkxYjYtMDg5OWM0NzMwMDY4IiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
     </div>
 
-    
+    <!-- Pre-planning report -->
+    <div id="preplanning" class="report-container">
+      <iframe title="2026-pre-planning" width="1140" height="541.25" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiNDlhMTY4YjYtMTJhNy00M2I3LThlODctMGIzYTUwNzU5OWY1IiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9&pageName=9d581229ecddcf562cfa" 
+      frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+
+    <!-- Production report -->
+    <div id="production" class="report-container">
+      <iframe 
+        title="production-2025"
+        src="https://app.powerbi.com/view?r=eyJrIjoiZGM1NTA5NTUtMmUzMi00NzlkLTkxNGEtNjQ0N2RhOTVjMmU5IiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9"
+        allowFullScreen="true"></iframe>
+    </div>
+
+    <!-- Purchasing report -->
+    <div id="purchasing" class="report-container">
+      <iframe title="2026-Purchasing-dashboard" width="600" height="373.5" 
+      src="https://app.powerbi.com/view?r=eyJrIjoiZDBhZWVhYjctMmNiZC00NDBhLWJmY2YtOGFmZWUxZGNiZGJiIiwidCI6ImY3OGYxNjhlLWI4NWUtNGQxYS05ZjEzLWFjZTJiZjE3ZmM0YSJ9" 
+      frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+
+
+  </div>
+
+  
 </body>
+<!-- <canvas id="confetti-canvas"></canvas> -->
+
 
 </html>
+<script>
+  const canvas = document.getElementById("confetti-canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const confettiCount = 150;
+  const confetti = [];
+  let animationId;
+
+  const colors = [
+    "#ff0a54", "#ff477e", "#ff7096",
+    "#ffd166", "#06d6a0", "#118ab2"
+  ];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+
+  class ConfettiPiece {
+    constructor() {
+      this.reset();
+    }
+
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height - canvas.height;
+      this.size = Math.random() * 8 + 4;
+      this.speed = Math.random() * 3 + 2;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.rotation = Math.random() * 360;
+      this.rotationSpeed = Math.random() * 10 - 5;
+    }
+
+    update() {
+      this.y += this.speed;
+      this.rotation += this.rotationSpeed;
+
+      if (this.y > canvas.height) {
+        this.reset();
+      }
+    }
+
+    draw() {
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rotation * Math.PI / 180);
+      ctx.fillStyle = this.color;
+      ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+      ctx.restore();
+    }
+  }
+
+  function initConfetti() {
+    confetti.length = 0;
+    for (let i = 0; i < confettiCount; i++) {
+      confetti.push(new ConfettiPiece());
+    }
+  }
+
+  function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    confetti.forEach(piece => {
+      piece.update();
+      piece.draw();
+    });
+    animationId = requestAnimationFrame(animateConfetti);
+  }
+
+  function startConfetti() {
+    initConfetti();
+    animateConfetti();
+
+    // 🛑 Stop after 30 seconds
+    setTimeout(() => {
+      cancelAnimationFrame(animationId);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }, 30000);
+  }
+
+  // ▶️ Auto start
+  startConfetti();
+</script>
+
+
